@@ -1,2 +1,11 @@
 -- Escreva uma consulta que retorne o nome por extenso dos estados brasileiros
-
+SELECT DISTINCT
+COUNTRY AS PAIS,
+STATE   AS UF,
+CASE  
+  WHEN STATE = 'SP' THEN 'SÃO PAULO'
+  WHEN STATE = 'RJ' THEN 'RIO DE JANEIRO'
+  ELSE 'ESTADO DESCONHECIDO'
+END AS ESTADO
+FROM CUSTOMERS
+WHERE COUNTRY LIKE 'Brazil';
